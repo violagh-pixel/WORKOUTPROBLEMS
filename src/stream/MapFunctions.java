@@ -26,5 +26,11 @@ public class MapFunctions {
 		  System.out.println(names.stream().distinct().map(String::toLowerCase).collect(Collectors.toList()));
 		  // 9. Count number of strings with a certain prefix
 		  System.out.println(names.stream().map(e-> "count: "+e.length()).collect(Collectors.toList()));
+		  // 10. f you want to sort by length in reverse:
+		  List<String> sortedByLengthDesc = names.stream().distinct()
+			        .sorted((s1, s2) -> Integer.compare(s2.length(), s1.length()))
+			        .collect(Collectors.toList());
+		  System.out.println(sortedByLengthDesc);
+
 	}
 }
